@@ -12,6 +12,8 @@ Pull the framework and checkout the example project in the subfolder.
 
 Version 2.0 and later supports single checkmarks without OK button. For that purpose, the initialiser had to be updated in version 2.0. If you update from an earlier version, you need to update the DYAlertController initializer. See the change log below for details.
 
+Version 3.1 has *support for iOS 13 dark mode*. Call the present() function on your DYAlertController instance to launch it.  
+
 
 ## Installation
 
@@ -141,7 +143,7 @@ alert.addOKButtonAction("OK", setDisabled: false, setDestructive: false) {
 }
 ```
 You can set the ok button to disabled or destructive state initially (e.g. if the user should change the selection first before he can tap the ok button). 
-The button style can be changed in the action handlers. For that purpose, call the changeOKButtonStateIfNeeded() function in every action item closure. **This function implements a default behaviour of the ok button state change**: (1)if all options are deselected, the ok button is disabled; (2) if one or several of the selected actions are destructive, the ok button is set to destructive style; (3) if neither 1 nor 2 are true, then the state is set to normal. Check out the functions default implementation to help you override it if needed. 
+The button style can be changed in the action handlers. For that purpose, call the changeOKButtonStateIfNeeded() function in every action item closure. **This function implements a default behaviour of the ok button state change**: (1)if all options are deselected, the ok button is disabled; (2) if one or several of the selected actions are destructive, the ok button is set to destructive style; (3) if neither 1 nor 2 are true, then the state is set to normal. Check out the default implementation of the function and override it if required. 
 
 Example:
 
@@ -210,7 +212,7 @@ If you intend to create several alerts or action sheets with the same fonts and 
 
 alert.settings.contentViewCornerRadius = 2.0
 
-alert.settings.titleTextColor = UIColor.black
+alert.settings.titleTextColor = UIColor.secondaryLabel
 
 ```
 
@@ -218,6 +220,9 @@ These changes only overwrite the settings properties of your current DYAlertView
 
 
 ## Change Log
+
+### [Version 3.1](https://github.com/DominikButz/DYAlertController/releases/tag/3.1)
+Support for dark mode when installed for iOS 13. Added iOS 13 extension for SwiftUI that allows launching an DYAlertController instance simply by calling present() on the instance. Bug fixes.
 
 ### [Version 3.0.1](https://github.com/DominikButz/DYAlertController/releases/tag/3.0.1)
 Minor settings update. No syntax change to update to Swift 5.0.

@@ -4,17 +4,25 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>DYActionCell.nib</key>
+		<key>DYActionCell.nib/objects-13.0+.nib</key>
 		<data>
-		XQ+jIyDDrrSJhli6PFG2zNld1CE=
+		IghU/o/ukpTjvNkEx4zJxL+PM7o=
 		</data>
-		<key>DYAlertController.nib</key>
+		<key>DYActionCell.nib/runtime.nib</key>
 		<data>
-		56zb6H5LdmhjTAMCjvgkZ6raviM=
+		NLS6puBZof7g9OufbV7qFQpZry8=
+		</data>
+		<key>DYAlertController.nib/objects-13.0+.nib</key>
+		<data>
+		C738jMjIcBBZjoRDHeQ5UpTUhcQ=
+		</data>
+		<key>DYAlertController.nib/runtime.nib</key>
+		<data>
+		hYS9zBGGQknGzU0USgi9xYQynKk=
 		</data>
 		<key>Headers/DYAlertController-Swift.h</key>
 		<data>
-		suZ8yp0cMCi7TOLPmYLhn1MkFhE=
+		4gZWOc3qZRhF3rOjAEYxNUIWg5Q=
 		</data>
 		<key>Headers/DYAlertController-umbrella.h</key>
 		<data>
@@ -22,15 +30,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		mz2zBU9Jb1nhX2ytWUO9D5KdbOw=
+		AC5aL0zSM42AAz12MMa6r1SPhzY=
+		</data>
+		<key>Modules/DYAlertController.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
+		<data>
+		aW5fr7gf4o75SiMkYrcd06+5qP0=
+		</data>
+		<key>Modules/DYAlertController.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
+		<data>
+		poVoqncJJpU4XZ9Vw+H4Xs7oZxk=
 		</data>
 		<key>Modules/DYAlertController.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		nIZtUidEuo2mjtNmVJ2N4tg+JbU=
+		aW5fr7gf4o75SiMkYrcd06+5qP0=
 		</data>
 		<key>Modules/DYAlertController.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		it4bOefjDuzJzNOjbHGcpFGqLB0=
+		poVoqncJJpU4XZ9Vw+H4Xs7oZxk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -39,37 +55,59 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>DYActionCell.nib</key>
+		<key>DYActionCell.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XQ+jIyDDrrSJhli6PFG2zNld1CE=
+			IghU/o/ukpTjvNkEx4zJxL+PM7o=
 			</data>
 			<key>hash2</key>
 			<data>
-			QPNfno1hcglAkDPuUPRA0JbXfPu4nLRJEDdRvDztpQk=
+			NOAZuk5ft3qgz130SY8tw/IwQu81mSX6A5VGNBg8RGg=
 			</data>
 		</dict>
-		<key>DYAlertController.nib</key>
+		<key>DYActionCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			56zb6H5LdmhjTAMCjvgkZ6raviM=
+			NLS6puBZof7g9OufbV7qFQpZry8=
 			</data>
 			<key>hash2</key>
 			<data>
-			CXFLKglp58zcqpTG7PRnTz+GkhK52H4b0mgN2habjvI=
+			eKEvbU5ZZma8OQ771N4zoILX7kKVnqTy4cuHpydC6wg=
+			</data>
+		</dict>
+		<key>DYAlertController.nib/objects-13.0+.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			C738jMjIcBBZjoRDHeQ5UpTUhcQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			iaUzcCndSNXqZMKslB/2u1uTXnC4L1OtS6wnCH1MBxY=
+			</data>
+		</dict>
+		<key>DYAlertController.nib/runtime.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			hYS9zBGGQknGzU0USgi9xYQynKk=
+			</data>
+			<key>hash2</key>
+			<data>
+			48cyM5zp1vSUPJJa81h9O45aZGWdu55hm9q+/9cFoEU=
 			</data>
 		</dict>
 		<key>Headers/DYAlertController-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			suZ8yp0cMCi7TOLPmYLhn1MkFhE=
+			4gZWOc3qZRhF3rOjAEYxNUIWg5Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			zzLKrNrwwV36vCbdD1620jgae7kX9U6c8TAhJX6TMl0=
+			V9pyT4H6S+k/g55aDVRa3u7g8LfUXyzvRq4IfBhCPZs=
 			</data>
 		</dict>
 		<key>Headers/DYAlertController-umbrella.h</key>
@@ -83,26 +121,48 @@
 			87Mt4Q+gRPZYipRIqI9BwQT/QtUwppgPf0iQM83eJQI=
 			</data>
 		</dict>
+		<key>Modules/DYAlertController.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			aW5fr7gf4o75SiMkYrcd06+5qP0=
+			</data>
+			<key>hash2</key>
+			<data>
+			6dkvlHQ5jsN/KfIV3NMsPsQB22noAc9fHwSzl5OrGgo=
+			</data>
+		</dict>
+		<key>Modules/DYAlertController.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			poVoqncJJpU4XZ9Vw+H4Xs7oZxk=
+			</data>
+			<key>hash2</key>
+			<data>
+			gWMG/NogLvlWH5sUuGSv1oeTdS+znLP/ujzkTWesark=
+			</data>
+		</dict>
 		<key>Modules/DYAlertController.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nIZtUidEuo2mjtNmVJ2N4tg+JbU=
+			aW5fr7gf4o75SiMkYrcd06+5qP0=
 			</data>
 			<key>hash2</key>
 			<data>
-			hSuBlZW9pvDrlA2RYfD3stTJlru2t+x7HKAl6wHDbks=
+			6dkvlHQ5jsN/KfIV3NMsPsQB22noAc9fHwSzl5OrGgo=
 			</data>
 		</dict>
 		<key>Modules/DYAlertController.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			it4bOefjDuzJzNOjbHGcpFGqLB0=
+			poVoqncJJpU4XZ9Vw+H4Xs7oZxk=
 			</data>
 			<key>hash2</key>
 			<data>
-			VbL7Tdke1Zx7d5jfFqoShgBzng893Y7U/5ZPOkW9EjY=
+			gWMG/NogLvlWH5sUuGSv1oeTdS+znLP/ujzkTWesark=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

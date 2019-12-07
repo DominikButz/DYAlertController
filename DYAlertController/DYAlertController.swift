@@ -350,6 +350,7 @@ open class DYAlertController: UIViewController, UITableViewDelegate, UITableView
         contentView.autoresizingMask = .flexibleHeight
         contentView.layer.cornerRadius = settings.contentViewCornerRadius
         contentView.autoresizesSubviews = true
+        contentView.backgroundColor = .clear
         if let _ = contentViewCustomWidth {
             contentViewWidthConstraint.constant =   contentViewCustomWidth! 
            
@@ -357,6 +358,11 @@ open class DYAlertController: UIViewController, UITableViewDelegate, UITableView
         mainView.clipsToBounds = true
         mainView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         mainView.backgroundColor = settings.mainViewBackgroundColor
+        let separatorLineColor:UIColor  =   {   if #available(iOS 13.0, *) { return UIColor.systemGray2} else {return UIColor.lightGray} }()
+        topSeparatorLine.backgroundColor = separatorLineColor
+        bottomSeparatorLine.backgroundColor = separatorLineColor
+        buttonSeparatorLine?.backgroundColor = separatorLineColor
+        
         if style == .actionSheet  {
             bottomSeparatorLine.removeFromSuperview()
             self.tableViewToMainViewBottomConstraint.constant = 0
@@ -371,7 +377,7 @@ open class DYAlertController: UIViewController, UITableViewDelegate, UITableView
 
         tableView.allowsMultipleSelection = self.selectionType == .multiple
     
-        tableView.separatorStyle = .singleLineEtched
+        tableView.separatorStyle = .singleLine
         tableView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     
 
@@ -524,10 +530,10 @@ open class DYAlertController: UIViewController, UITableViewDelegate, UITableView
         
         if self.style == .alert {
             
-            cancelButtonToMainViewConstraint.constant = 1
-            okButtonToMainViewConstraint?.constant = 1
+            cancelButtonToMainViewConstraint.constant = 0
+            okButtonToMainViewConstraint?.constant = 0
             
-            contentView.backgroundColor = UIColor.white
+          //  contentView.backgroundColor = UIColor.white
             contentView.clipsToBounds = true
             
         } else {
@@ -1118,6 +1124,51 @@ extension DYAlertController: UIViewControllerAnimatedTransitioning {
     }
 
     
+}
+
+
+@available(iOS 13.0, *) public extension DYAlertController {
+    /// use this function in iOS 13 with SwiftUI to present the DYAlertController instance.
+    func present() {
+        
+        if let controller = UIViewController.topMostViewController() {
+            controller.present(self, animated: true)
+        }
+    }
+}
+
+@available(iOS 13.0, *) public extension UIViewController {
+    
+    static private func keyWindow() -> UIWindow? {
+        return UIApplication.shared.connectedScenes
+        .filter {$0.activationState == .foregroundActive}
+        .compactMap {$0 as? UIWindowScene}
+        .first?.windows.filter {$0.isKeyWindow}.first
+    }
+
+    static func topMostViewController()-> UIViewController? {
+        guard let rootController = keyWindow()?.rootViewController else {
+            return nil
+        }
+        return topMostViewController(for: rootController)
+    }
+
+    static private func topMostViewController(for controller: UIViewController) -> UIViewController {
+        if let presentedController = controller.presentedViewController {
+            return topMostViewController(for: presentedController)
+        } else if let navigationController = controller as? UINavigationController {
+            guard let topController = navigationController.topViewController else {
+                return navigationController
+            }
+            return topMostViewController(for: topController)
+        } else if let tabController = controller as? UITabBarController {
+            guard let topController = tabController.selectedViewController else {
+                return tabController
+            }
+            return topMostViewController(for: topController)
+        }
+        return controller
+    }
 }
 
 

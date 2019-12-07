@@ -106,8 +106,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 print("hostname:\(alert.textFields[2].text!)")
             }
             
-            
-    
+
             self.present(alert, animated: true, completion: nil)
     
         }

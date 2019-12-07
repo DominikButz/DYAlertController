@@ -217,7 +217,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = Duoyun;
 				TargetAttributes = {
 					B4487F3D1DE547940015E08E = {
