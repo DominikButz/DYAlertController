@@ -3,7 +3,7 @@
 //  
 //
 //  Created by Dominik Butz on 22/02/16.
-//
+// v. 3.3.1
 //
 
 import UIKit
@@ -248,7 +248,6 @@ open class DYAlertController: UIViewController, UITableViewDelegate, UITableView
         
         self.checkOKButtonIncompatibilities()
 
-        
         layoutSubviews()
 
 
@@ -290,7 +289,8 @@ open class DYAlertController: UIViewController, UITableViewDelegate, UITableView
         }
         
         self.setCellSelectedIfNeeded()
-        
+
+
         
     }
     
@@ -330,6 +330,8 @@ open class DYAlertController: UIViewController, UITableViewDelegate, UITableView
 
             }
         
+      
+        
 
     }
     
@@ -346,7 +348,7 @@ open class DYAlertController: UIViewController, UITableViewDelegate, UITableView
     
     fileprivate func layoutSubviews() {
         
-        
+
         contentView.autoresizingMask = .flexibleHeight
         contentView.layer.cornerRadius = settings.contentViewCornerRadius
         contentView.autoresizesSubviews = true
@@ -355,9 +357,12 @@ open class DYAlertController: UIViewController, UITableViewDelegate, UITableView
             contentViewWidthConstraint.constant =   contentViewCustomWidth! 
            
         }
+
         mainView.clipsToBounds = true
         mainView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         mainView.backgroundColor = settings.mainViewBackgroundColor
+  
+        
         let separatorLineColor:UIColor  =   {   if #available(iOS 13.0, *) { return UIColor.systemGray2} else {return UIColor.lightGray} }()
         topSeparatorLine.backgroundColor = separatorLineColor
         bottomSeparatorLine.backgroundColor = separatorLineColor
@@ -385,10 +390,31 @@ open class DYAlertController: UIViewController, UITableViewDelegate, UITableView
 
         layoutButtons()
         
-        // text fields (if any) layout only in the didLayoutSubviews method!
+
         
     }
     
+    
+    
+
+    
+//    fileprivate func insertShadowLayer() {
+//
+//          let shadowLayer = CAShapeLayer()
+//        //   let fillColor: UIColor = .lightGray
+//      shadowLayer.path = UIBezierPath(roundedRect: self.contentView.bounds, cornerRadius: self.settings.contentViewCornerRadius).cgPath
+//         //   shadowLayer.fillColor = fillColor.cgColor
+//
+//            shadowLayer.shadowColor = UIColor.darkGray.cgColor
+//            shadowLayer.shadowPath = shadowLayer.path
+//        shadowLayer.shadowOffset = .zero
+//            shadowLayer.shadowOpacity = 0.5
+//            shadowLayer.shadowRadius = 10
+//        shadowLayer.masksToBounds = false
+//
+//        self.contentView.layer.insertSublayer(shadowLayer, at: 0)
+//    }
+//
     
     fileprivate func adjustTableViewHeight() {
 
@@ -485,7 +511,6 @@ open class DYAlertController: UIViewController, UITableViewDelegate, UITableView
     
     fileprivate func layoutButtons() {
 
-        
         cancelButton.backgroundColor = settings.cancelButtonBackgroundColor
         
         cancelButton.setTitleColor(settings.cancelButtonTintColorDefault, for: UIControl.State())
@@ -534,7 +559,7 @@ open class DYAlertController: UIViewController, UITableViewDelegate, UITableView
             okButtonToMainViewConstraint?.constant = 0
             
           //  contentView.backgroundColor = UIColor.white
-            contentView.clipsToBounds = true
+            contentView.layer.masksToBounds = true
             
         } else {
             // Action sheet!
@@ -766,8 +791,13 @@ open class DYAlertController: UIViewController, UITableViewDelegate, UITableView
         if self.selectionType == .none {
             // no ok button possible
             tableView.deselectRow(at: indexPath, animated: true)
-            self.dismiss(animated: true, completion: nil)
             action.selected = true
+            self.dismiss(animated: true, completion: {
+                if action.handler != nil {
+                      action.handler!(action)
+                  }
+            })
+            
             
         }
         
@@ -782,9 +812,10 @@ open class DYAlertController: UIViewController, UITableViewDelegate, UITableView
             } else {
                 tableView.deselectRow(at: indexPath, animated: true)
             }
-
-            
-            
+            if action.handler != nil {
+                    action.handler!(action)
+            }
+                
         } else {
             // single selection  and no OK button!
             
@@ -792,19 +823,19 @@ open class DYAlertController: UIViewController, UITableViewDelegate, UITableView
             
             tableView.selectRow(at: indexPath, animated: true, scrollPosition: .middle)
             
-             self.dismiss(animated: true, completion: nil)
+             self.dismiss(animated: true, completion: {
+                if action.handler != nil {
+                        action.handler!(action)
+                    }
+             })
 
         }
         
-        
-        if action.handler != nil {
-            action.handler!(action)
-            
-        }
-    
+
  
     }
     
+
 
   public  func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
 
@@ -998,7 +1029,9 @@ extension DYAlertController: UIViewControllerAnimatedTransitioning {
             if style == .alert {
                 
                 self.presentAlertAnimation(transitionContext.containerView, fromView: fromVC.view, toView: toVC.view, completion: { (_) -> Void in
+            
                      transitionContext.completeTransition(true)
+                    
                 })
                 
             } else {
@@ -1036,6 +1069,7 @@ extension DYAlertController: UIViewControllerAnimatedTransitioning {
 
             
     }
+
     
     
     fileprivate func presentAlertAnimation(_ container: UIView, fromView: UIView, toView:UIView, completion: @escaping (Bool)->Void) {
@@ -1170,6 +1204,5 @@ extension DYAlertController: UIViewControllerAnimatedTransitioning {
         return controller
     }
 }
-
 
 

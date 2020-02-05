@@ -221,6 +221,9 @@ These changes only overwrite the settings properties of your current DYAlertView
 
 ## Change Log
 
+### [Version 3.1.1](https://github.com/DominikButz/DYAlertController/releases/tag/3.1.1)
+Bug fix: if there is no OK button, the action closure will only be executed after dismissal. 
+
 ### [Version 3.1](https://github.com/DominikButz/DYAlertController/releases/tag/3.1)
 Support for dark mode when installed for iOS 13. Added iOS 13 extension for SwiftUI that allows launching an DYAlertController instance simply by calling present() on the instance. Bug fixes.
 

@@ -85,7 +85,7 @@ class DYActionCell: UITableViewCell {
         
         self.isUserInteractionEnabled = (actionItem.style != .disabled)
         self.hasAccessoryView = hasAccessoryView
-        print("has accessory view? \(hasAccessoryView)")
+        //print("has accessory view? \(hasAccessoryView)")
         self.style = actionItem.style
         
         self.settings = settings

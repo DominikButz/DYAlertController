@@ -66,8 +66,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
             let titleImage = UIImage(named: "shareIcon")
             let alert = DYAlertController(style: .alert, title: "Login", titleIconImage: titleImage, message: "Enter your login data", cancelButtonTitle: "Cancel", checkmarks: .single, customFrameWidth:self.view.frame.width - 80.0, backgroundEffect: DYAlertController.EffectViewMode.dim)
-    
-
+            alert.settings.dimViewColor = .clear
             
             let textfield1 = UITextField()
             textfield1.placeholder = "username"
