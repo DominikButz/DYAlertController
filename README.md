@@ -21,7 +21,7 @@ Version 3.1 has *support for iOS 13 dark mode*. Call the present() function on y
 Install DYAlertController through Cocoapods. Enter the following information into your Podfile (see current version in header):
 
 ```Ruby
-platform :ios, '8.0'
+platform :ios, '12.0'
 
 use_frameworks!
 
@@ -220,6 +220,9 @@ These changes only overwrite the settings properties of your current DYAlertView
 
 
 ## Change Log
+
+### [Version 3.2](https://github.com/DominikButz/DYAlertController/releases/tag/3.2)
+Adjusting deployment target to iOS 12 to make running this project in Xcode 15 possible.
 
 ### [Version 3.1.1](https://github.com/DominikButz/DYAlertController/releases/tag/3.1.1)
 Bug fix: if there is no OK button, the action closure will only be executed after dismissal. 

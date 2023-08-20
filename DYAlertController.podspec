@@ -2,14 +2,14 @@ Pod::Spec.new do |s|
 
 # 1
 s.platform = :ios
-s.ios.deployment_target = '8.0'
+s.ios.deployment_target = '12.0'
 s.name = "DYAlertController"
 s.summary = "Replacement for UIAlertController with many customizable features"
 s.swift_version = '5.0'
 s.requires_arc = true
 
 # 2
-s.version = "3.1.1"
+s.version = "3.2"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }
